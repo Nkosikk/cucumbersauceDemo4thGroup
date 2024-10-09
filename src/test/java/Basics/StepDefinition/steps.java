@@ -37,8 +37,8 @@ public class steps {
     public void the_home_page_is_displayed() {
         driver.findElement(By.xpath("//span[@class='title'][contains(.,'Products')]")).isDisplayed();
     }
-    @After
-    public void closeBrowser(){
-        driver.quit();
-    }
+//    @After
+//    public void closeBrowser(){
+//        driver.quit();
+//    }
 }
