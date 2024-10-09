@@ -1,12 +1,13 @@
 package Steps;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 
-public class StepDef {
+public class StepDef extends Base{
 
     @Given("The user table is displayed")
     public void the_user_table_is_displayed() {
-
+        userTablePage.verifyThatUserTableIsDisplayed();
     }
     @And("The user click add user")
     public void the_user_click_add_user() {
@@ -19,5 +20,10 @@ public class StepDef {
     @And("The user enters firstName (.*)$")
     public void the_user_enters_first_name(String name) {
 
+    }
+
+    @After
+    public void closeBrowser(){
+        driver.quit();
     }
 }
