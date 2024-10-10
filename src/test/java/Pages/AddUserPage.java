@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Random;
 
 public class AddUserPage {
 
@@ -54,12 +55,15 @@ public class AddUserPage {
     }
 
     public void enterUseName(String userName) {
-        userName_xpath.sendKeys(userName);
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(1000);
+        String newUserName = userName + randomNumber;
+        userName_xpath.sendKeys(newUserName);
 
     }
 
     public void enterPassword(String password) {
-        userName_xpath.sendKeys(password);
+        password_xpath.sendKeys(password);
 
     }
 
