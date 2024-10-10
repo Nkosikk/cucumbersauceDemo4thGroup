@@ -5,6 +5,10 @@ Feature: User Table
     And The user click add user
     And The user validates that ad user screen is displayed
     And The user enters firstName <firstName>
+    And The user enters lastName <lastName>
+    And The user enters userName <userName>
+    And The user enters password <password>
+
     Examples:
-      | firstName |
-      | Nkosi     |
+      | firstName | lastName | userName     | password |
+      | Simo      | Mkhasibe | SimoMkhasibe | Test12$  |
