@@ -1,5 +1,7 @@
 package Pages;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,6 +43,9 @@ public class AddUserPage {
 
     @FindBy(xpath = "//input[@name='Email']")
     WebElement email_xpath;
+
+    @FindBy(xpath = "//input[@name='Mobilephone']")
+    WebElement cellPhone_xpath;
 
     public AddUserPage(WebDriver driver) {
         this.driver = driver;
@@ -91,6 +96,11 @@ public class AddUserPage {
 
     public void enterEmail(String email) {
         email_xpath.sendKeys(email);
+
+    }
+
+    public void enterCellPhone(String cellPhone) {
+        cellPhone_xpath.sendKeys(cellPhone);
 
     }
 

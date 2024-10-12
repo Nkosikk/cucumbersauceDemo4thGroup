@@ -61,6 +61,16 @@ public class StepDef extends Base{
 
     }
 
+    @Given("The user enters cellPhone {int}")
+    public void the_user_enters_cell_phone(Integer cellPhone) {
+        addUserPage.enterCellPhone(String.valueOf(cellPhone));
+
+    }
+
+    @When("The user click save button")
+    public void the_user_click_save_button() {
+
+    }
 
     @After
     public void closeBrowser(){
