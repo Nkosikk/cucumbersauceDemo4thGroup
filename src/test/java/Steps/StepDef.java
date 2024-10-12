@@ -69,6 +69,7 @@ public class StepDef extends Base{
 
     @When("The user click save button")
     public void the_user_click_save_button() {
+        addUserPage.clickSave();
 
     }
 

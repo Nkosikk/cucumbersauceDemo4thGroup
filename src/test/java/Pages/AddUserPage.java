@@ -47,6 +47,10 @@ public class AddUserPage {
     @FindBy(xpath = "//input[@name='Mobilephone']")
     WebElement cellPhone_xpath;
 
+    @FindBy(xpath = "//button[contains(.,'Save')]")
+    WebElement saveButton_xpath;
+
+
     public AddUserPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -103,5 +107,11 @@ public class AddUserPage {
         cellPhone_xpath.sendKeys(cellPhone);
 
     }
+
+    public void clickSave() {
+        saveButton_xpath.click();
+
+    }
+
 
 }
