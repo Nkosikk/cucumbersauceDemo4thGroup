@@ -43,6 +43,12 @@ public class StepDef extends Base{
 
     }
 
+    @And("The user select customer Company BBB")
+    public void the_user_select_customer_company_bbb() {
+        addUserPage.selectCustomer();
+
+    }
+
     @After
     public void closeBrowser(){
         driver.quit();

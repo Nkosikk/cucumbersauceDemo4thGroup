@@ -31,6 +31,9 @@ public class AddUserPage {
     @FindBy(xpath = "//input[@name='Password']")
     WebElement password_xpath;
 
+    @FindBy(xpath = "//input[@value='16']")
+    WebElement customerRadioButton_xpath;
+
     public AddUserPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -64,6 +67,11 @@ public class AddUserPage {
 
     public void enterPassword(String password) {
         password_xpath.sendKeys(password);
+
+    }
+
+    public void selectCustomer() {
+        customerRadioButton_xpath.click();
 
     }
 
