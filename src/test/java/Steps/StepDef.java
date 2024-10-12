@@ -55,6 +55,13 @@ public class StepDef extends Base{
 
     }
 
+    @And("The user enters email (.*)$")
+    public void the_user_enters_email_email(String email) {
+        addUserPage.enterEmail(email);
+
+    }
+
+
     @After
     public void closeBrowser(){
         driver.quit();

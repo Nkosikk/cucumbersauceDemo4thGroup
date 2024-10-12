@@ -39,6 +39,9 @@ public class AddUserPage {
     @FindBy(name = "RoleId")
     WebElement role_name;
 
+    @FindBy(xpath = "//input[@name='Email']")
+    WebElement email_xpath;
+
     public AddUserPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -83,6 +86,11 @@ public class AddUserPage {
     public void selectRole(){
         Select dropdown = new Select(role_name);
         dropdown.selectByVisibleText("Sales Team");
+
+    }
+
+    public void enterEmail(String email) {
+        email_xpath.sendKeys(email);
 
     }
 

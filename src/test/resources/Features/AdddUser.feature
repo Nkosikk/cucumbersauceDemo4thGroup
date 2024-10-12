@@ -10,7 +10,8 @@ Feature: User Table
     And The user enters password <password>
     And The user select customer company BBB
     And The user select a role sales team
+    And The user enters email <email>
 
     Examples:
-      | firstName | lastName | userName     | password |
-      | Simo      | Mkhasibe | SimoMkhasibe | Test12$  |
+      | firstName | lastName | userName     | password | email       |
+      | Simo      | Mkhasibe | SimoMkhasibe | Test12$  | simo@QA.com |
