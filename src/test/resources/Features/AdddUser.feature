@@ -8,8 +8,8 @@ Feature: User Table
     And The user enters lastName <lastName>
     And The user enters userName <userName>
     And The user enters password <password>
-    And The user select customer company BBB
-    And The user select a role sales team
+    And The user select customer
+    And The user select a role
     And The user enters email <email>
     And The user enters cellPhone <cellPhone>
     When The user click save button

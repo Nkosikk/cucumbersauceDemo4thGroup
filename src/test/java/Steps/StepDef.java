@@ -43,13 +43,13 @@ public class StepDef extends Base{
 
     }
 
-    @And("The user select customer company BBB")
-    public void the_user_select_customer_company_bbb() {
+    @And("The user select customer")
+    public void the_user_select_customer() {
         addUserPage.selectCustomer();
 
     }
 
-    @And("The user select a role sales team")
+    @And("The user select a role")
     public void the_user_select_a_role() {
         addUserPage.selectRole();
 
