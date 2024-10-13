@@ -13,7 +13,8 @@ Feature: User Table
     And The user enters email <email>
     And The user enters cellPhone <cellPhone>
     When The user click save button
+    Then A user is successful added to the table
 
     Examples:
-      | firstName | lastName | userName     | password | email       |cellPhone|
-      | Simo      | Mkhasibe | SimoMkhasibe | Test12$  | simo@QA.com |10111    |
+      | firstName | lastName | userName     | password | email       | cellPhone |
+      | Simo      | Mkhasibe | SimoMkhasibe | Test12$  | simo@QA.com | 10111     |

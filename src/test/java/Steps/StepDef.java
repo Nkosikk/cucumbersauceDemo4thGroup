@@ -73,6 +73,12 @@ public class StepDef extends Base{
 
     }
 
+    @Then("A user is successful added to the table")
+    public void a_user_is_successful_added_to_the_table() {
+        userTablePage.verifyThatTheAddedUserIsDisplayed();
+
+    }
+
     @After
     public void closeBrowser(){
         driver.quit();
