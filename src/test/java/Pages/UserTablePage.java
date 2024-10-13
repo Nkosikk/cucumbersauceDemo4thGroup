@@ -28,6 +28,7 @@ public class UserTablePage {
     }
 
     public void verifyThatTheAddedUserIsDisplayed() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(userNameV_xpath));
         userNameV_xpath.isDisplayed();
 
     }
