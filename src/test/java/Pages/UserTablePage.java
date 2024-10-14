@@ -15,6 +15,9 @@ public class UserTablePage {
     @FindBy(xpath = "//span[contains(.,'First Name')]")
     WebElement firstName_xpath;
 
+    @FindBy(xpath = "//td[contains(.,'SimoMkhasibe')]")
+    WebElement userNameV_xpath;
+
     public UserTablePage(WebDriver driver){
         this.driver=driver;
     }
@@ -22,6 +25,12 @@ public class UserTablePage {
     public void verifyThatUserTableIsDisplayed(){
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(firstName_xpath));
         firstName_xpath.isDisplayed();
+    }
+
+    public void verifyThatTheAddedUserIsDisplayed() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(userNameV_xpath));
+        userNameV_xpath.isDisplayed();
+
     }
 
 
