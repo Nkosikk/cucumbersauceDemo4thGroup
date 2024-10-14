@@ -92,8 +92,8 @@ public class StepDef extends Base{
     }
 
 
-//    @After
-//    public void closeBrowser(){
-//        driver.quit();
-//    }
+    @After
+    public void closeBrowser(){
+        driver.quit();
+    }
 }
