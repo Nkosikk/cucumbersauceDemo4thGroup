@@ -37,6 +37,11 @@ public class steps {
     public void the_home_page_is_displayed() {
         driver.findElement(By.xpath("//span[@class='title'][contains(.,'Products')]")).isDisplayed();
     }
+
+    @Then("The user click add user")
+    public void the_user_click_add_user() {
+        driver.findElement(By.xpath("//button[contains(.,'Add User')]")).click();
+    }
 //    @After
 //    public void closeBrowser(){
 //        driver.quit();
