@@ -17,5 +17,6 @@ Feature: User Table
     Then A user is successful added to the table
 
     Examples:
-      | firstName | lastName | userName     | password | email       | cellPhone |
-      | Simo      | Mkhasibe | SimoMkhasibe | Test12$  | simo@QA.com | 10111     |
+      | firstName | lastName | userName     | password  | email        | cellPhone |
+      | Simo      | Mkhasibe | SimoMkhasibe | Test12$   | simo@QA.com  | 10111     |
+      | Nkosi     | Cele     | NkosiCele    | Test12345 | nkosi@QA.com | 22111     |

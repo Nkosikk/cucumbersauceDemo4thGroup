@@ -2,6 +2,7 @@ package Steps;
 
 import Pages.AddUserPage;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
@@ -91,8 +92,8 @@ public class StepDef extends Base{
     }
 
 
-    @After
-    public void closeBrowser(){
-        driver.quit();
-    }
+//    @After
+//    public void closeBrowser(){
+//        driver.quit();
+//    }
 }
