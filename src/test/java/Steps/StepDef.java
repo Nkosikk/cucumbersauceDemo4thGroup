@@ -2,7 +2,11 @@ package Steps;
 
 import Pages.AddUserPage;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class StepDef extends Base{
 
@@ -76,8 +80,16 @@ public class StepDef extends Base{
     @Then("A user is successful added to the table")
     public void a_user_is_successful_added_to_the_table() {
         userTablePage.verifyThatTheAddedUserIsDisplayed();
-
     }
+
+    @AfterStep
+    public void addScreenshot(Scenario scenario){
+        if (scenario.isFailed()){
+            byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot,"image/png", "image");
+        }
+    }
+
 
     @After
     public void closeBrowser(){

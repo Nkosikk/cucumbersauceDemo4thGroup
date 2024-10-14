@@ -1,3 +1,4 @@
+@Regression, @UserTable
 Feature: User Table
 
   Scenario Outline: Add user to the table
