@@ -12,7 +12,7 @@ public class UserTablePage {
 
     WebDriver driver;
 
-    @FindBy(xpath = "//span[contains(.,'First Name')]")
+    @FindBy(xpath = "//span[contains(.,'First Name')]1")
     WebElement firstName_xpath;
 
     @FindBy(xpath = "/html[1]/body[1]/table[1]/tbody[1]/tr[1]/td[3]")
