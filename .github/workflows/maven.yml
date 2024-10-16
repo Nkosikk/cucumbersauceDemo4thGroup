@@ -26,5 +26,5 @@ jobs:
         if: always()
         uses: Actions/upload-artifact@v3
         with:
-          name: test-report
-          path: Reports/
+          name: Automation-Report
+          path: test-output/
