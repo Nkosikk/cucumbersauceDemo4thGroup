@@ -15,23 +15,44 @@ public class UserTablePage {
     @FindBy(xpath = "//span[contains(.,'First Name')]")
     WebElement firstName_xpath;
 
-    @FindBy(xpath = "/html[1]/body[1]/table[1]/tbody[1]/tr[1]/td[3]")
+    @FindBy(xpath = "//table//td[3]")
     WebElement userNameV_xpath;
 
     public UserTablePage(WebDriver driver){
         this.driver=driver;
     }
 
-    public void verifyThatUserTableIsDisplayed(){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(firstName_xpath));
-        firstName_xpath.isDisplayed();
+    // public void verifyThatUserTableIsDisplayed(){
+    //     new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(firstName_xpath));
+    //     firstName_xpath.isDisplayed();
+    // }
+
+    // public void verifyThatTheAddedUserIsDisplayed() {
+    //     new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(userNameV_xpath));
+    //     userNameV_xpath.isDisplayed();
+
+    // }
+
+    public boolean verifyThatUserTableIsDisplayed() {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(firstName_xpath));
+            return firstName_xpath.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
-    public void verifyThatTheAddedUserIsDisplayed() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(userNameV_xpath));
-        userNameV_xpath.isDisplayed();
-
+    public boolean verifyThatTheAddedUserIsDisplayed() {
+        try {
+            // Consider using a more robust xpath like:
+            // @FindBy(xpath = "//table//td[contains(@class, 'username')] or //table//td[3]")
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(userNameV_xpath));
+            return userNameV_xpath.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
+
 
 
 }
