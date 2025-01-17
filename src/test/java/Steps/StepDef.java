@@ -1,14 +1,15 @@
 package Steps;
 
 import Pages.AddUserPage;
-import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
+
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 
+@SuppressWarnings("unused")
 public class StepDef extends Base{
 
     @Given("The user table is displayed")
@@ -81,6 +82,24 @@ public class StepDef extends Base{
     @Then("A user is successful added to the table")
     public void a_user_is_successful_added_to_the_table() {
         userTablePage.verifyThatTheAddedUserIsDisplayed();
+    }
+
+    @Then("The Last Name column and value should be displayed")
+    public void verify_last_name_column_and_value() {
+        Assert.assertTrue(userTablePage.verifyLastNameColumnIsDisplayed(), "Last Name column is not displayed");
+        Assert.assertTrue(userTablePage.verifyUserLastNameIsDisplayed(), "Last Name value is not displayed");
+    }
+
+    @Then("The Email column and value should be displayed")
+    public void verify_email_column_and_value() {
+        Assert.assertTrue(userTablePage.verifyEmailColumnIsDisplayed(), "Email column is not displayed");
+        Assert.assertTrue(userTablePage.verifyUserEmailIsDisplayed(), "Email value is not displayed");
+    }
+
+    @Then("The Role column and value should be displayed")
+    public void verify_role_column_and_value() {
+        Assert.assertTrue(userTablePage.verifyRoleColumnIsDisplayed(), "Role column is not displayed");
+        Assert.assertTrue(userTablePage.verifyUserRoleIsDisplayed(), "Role value is not displayed");
     }
 
     @AfterStep
